@@ -10,11 +10,11 @@
 /*global Image, module, define, window */
 
 (function(global, factory) {
-
     if ( typeof module === "object" && typeof module.exports === "object" ) {
         module.exports = factory( global );
     } else if ( typeof define == 'function' && define.amd ) {
-        define( "throbber", [], function() {
+
+        define(function() {
             return factory( global );
         });
     } else {
@@ -45,11 +45,11 @@
 
             var requestFrame = (function(){
               var r = 'RequestAnimationFrame';
-              return window.requestAnimationFrame || 
-                window['webkit'+r] || 
-                window['moz'+r] || 
-                window['o'+r] || 
-                window['ms'+r] || 
+              return window.requestAnimationFrame ||
+                window['webkit'+r] ||
+                window['moz'+r] ||
+                window['o'+r] ||
+                window['ms'+r] ||
                 function( callback ) {
                   window.setTimeout(callback, 1000 / 60);
                 };
@@ -307,7 +307,7 @@
 
             // copy the amount of lines into steps
             this.step = o.lines;
-            
+
             // double-up for retina screens
             if (!!window.devicePixelRatio) {
                 // lock element into desired end size
