@@ -185,7 +185,8 @@
             color: '#fff',      // color of the spinner, can be any CSS compatible value
             fade: 300,          // duration of fadein/out when calling .start() and .stop()
             fallback: false,    // a gif fallback for non-supported browsers
-            alpha: 1            // global alpha, can be defined using rgba as color or separatly
+            alpha: 1,            // global alpha, can be defined using rgba as color or separatly
+            className: ''
         };
 
         /*
@@ -307,6 +308,9 @@
 
             // copy the amount of lines into steps
             this.step = o.lines;
+
+            // add the class name to the elem
+            this.elem.className = o.className;
 
             // double-up for retina screens
             if (!!window.devicePixelRatio) {
